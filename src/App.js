@@ -655,7 +655,7 @@ export const App = ({ images }) => {
   // Fonction pour jouer le son de popup EN MODE EMPILÉ (nouvel objet Audio à chaque fois)
   const playPopupSound = () => {
     try {
-      const audio = new Audio('/popup-sound.mp3');
+      const audio = new Audio(`${process.env.PUBLIC_URL}/popup-sound.mp3`);
       audio.volume = 1;
       audio.play().catch(() => {});
     } catch (e) {
@@ -738,14 +738,14 @@ export const App = ({ images }) => {
       <audio
         ref={bgMusicRef}
         className="bg-music"
-        src="/bg-main.mp3"
+        src={`${process.env.PUBLIC_URL}/bg-main.mp3`}
       />
 
       {/* Son des GIF popups (préchargé, même si on utilise new Audio) */}
       <audio
         ref={popupSoundRef}
         className="popup-sound"
-        src="/popup-sound.mp3"
+        src={`${process.env.PUBLIC_URL}/popup-sound.mp3`}
       />
 
       {/* Overlay UI 2D */}
@@ -781,8 +781,8 @@ export const App = ({ images }) => {
       {/* Scream plein écran */}
       {showScream && (
         <div className="scream-overlay" onClick={() => setShowScream(false)}>
-          <img src="/scream.png" alt="Scream" className="scream-image" />
-          <audio ref={screamAudioRef} src="/scream.mp3" />
+          <img src={`${process.env.PUBLIC_URL}/scream.png`} alt="Scream" className="scream-image" />
+          <audio ref={screamAudioRef} src={`${process.env.PUBLIC_URL}/scream.mp3`} />
         </div>
       )}
 

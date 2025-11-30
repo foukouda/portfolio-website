@@ -59,7 +59,7 @@ const images = [
       'Frameworks et cas d\'usage autour des publicités Amazon, Carrefour, Leclerc…',
     year: '2024',
     tags: ['Amazon Ads', 'Retail media', 'Strategy'],
-    videoUrl: '/akira.mp4',
+    videoUrl: `${process.env.PUBLIC_URL}/akira.mp4`,
   },
 
   // Left wall
